@@ -213,14 +213,31 @@ table{ border-collapse:collapse; }
   font-size:11.5px; line-height:1.8; padding:18px; letter-spacing:.04em;
 }
 .slot-portrait{ aspect-ratio:3/4; }
-.pro-others{ margin-top:48px; padding-top:34px; border-top:1px solid var(--line); display:grid; gap:26px; }
-.pro-others h4{ font-family:var(--ff-mn); font-size:14px; font-weight:500; color:var(--ink); letter-spacing:.05em; }
-.pro-slot{ border:1px dashed #c6ccd1; background:#f4f5f6; padding:22px; }
-.pro-slot p{ margin-top:12px; font-size:11.5px; line-height:1.85; color:#7c858c; }
+.pro-others{ margin-top:52px; padding-top:38px; border-top:1px solid var(--line); display:grid; gap:38px; }
+.pro-card{ display:flex; flex-direction:column; }
+.pro-card .slot-square{ aspect-ratio:1/1; margin-bottom:20px; }
+.pro-headline{
+  font-family:var(--ff-mn); font-size:16px; font-weight:500; line-height:1.8;
+  color:var(--ink); letter-spacing:.03em;
+}
+.pro-headline mark{ background:none; color:var(--navy); }
+.pro-body{ margin-top:14px; font-size:12.5px; line-height:2.0; color:var(--text); }
+.pro-by{
+  margin-top:auto; padding-top:16px; border-top:1px solid var(--line);
+  font-size:12px; letter-spacing:.05em; color:var(--text-mute);
+}
+.pro-by b{ color:var(--ink); font-weight:500; font-size:13px; }
+.pro-disc{ margin-top:30px; font-size:11px; color:var(--text-mute); line-height:1.9; }
+.temp-badge{
+  position:absolute; left:0; bottom:0;
+  background:rgba(180,60,40,.88); color:#fff;
+  font-size:10px; letter-spacing:.1em; line-height:1; padding:6px 10px;
+}
 @media (min-width:768px){
-  .pro-main{ grid-template-columns:280px 1fr; gap:48px; align-items:start; }
-  .pro-quote{ font-size:19px; }
-  .pro-others{ grid-template-columns:repeat(3,1fr); gap:24px; }
+  .pro-main{ grid-template-columns:240px 1fr; gap:48px; align-items:start; }
+  .pro-quote{ font-size:18px; }
+  .pro-others{ grid-template-columns:repeat(3,1fr); gap:34px; }
+  .pro-headline{ font-size:17px; }
 }
 .img-wrap{ position:relative; }
 .img-badge{
@@ -813,7 +830,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <ul class="career">
           <li>プロ野球球団（阪神タイガース）でのトレーニング指導実績</li>
           <li>MLB傘下マイナーリーグ球団の選手に対する指導実績</li>
-          <li>元プロ野球選手・上園選手のトレーニング指導（プロ野球在籍当時）</li>
           <li>回旋動作・投球／打撃動作の分析と改善プログラム設計</li>
           <li>40〜60代の一般ゴルファーに対する指導実績多数</li>
         </ul>
@@ -838,36 +854,53 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <article class="pro-main rv rv-d1">
-      <div>
-        <!-- 権利処理済みの写真が用意でき次第、img に差し替え -->
-        <div class="slot slot-portrait">
-          [PHOTO: 河合庄司プロ<br>NeeDSでのトレーニング中の写真<br>／ 3:4 縦長]
-        </div>
+      <div class="img-wrap">
+        <!-- 仮配置。本番公開前に、NeeDSで撮影した権利処理済みの写真へ差し替えること -->
+        <img class="photo r-portrait" src="images/pro-kawai-temp.jpg"
+             alt="プロゴルファー 河合庄司選手" width="220" height="272"
+             loading="lazy" decoding="async">
+        <span class="temp-badge">写真は仮</span>
       </div>
       <div>
-        <h3 class="pro-name">河合 庄司<small>プロゴルファー ／ NeeDS会員</small></h3>
+        <h3 class="pro-name">河合 庄司<small>プロゴルファー ／ 現在もNeeDSでトレーニング中</small></h3>
+        <p class="pro-headline" style="margin-top:20px;">股関節・肩甲骨の動きで、<mark>飛距離アップ</mark>。</p>
         <blockquote class="pro-quote">
-          ［河合プロからいただいたコメントを、ここに掲載します］
-          <em><br>※ 掲載許可済みのコメントを差し込み予定</em>
+          NeeDSでトレーニングをさせていただいて、ゴルフスイングがスムーズにやり易くなりました。股関節や肩甲骨の動きも良くなって、それがスイングの改善に役立っているのも感じる事が出来ました。<br>
+          元々腰痛があったんですが改善されて、飛距離アップも期待出来るので、一度どういったトレーニングをするのか、是非体験して欲しいですね。
         </blockquote>
         <span class="pro-status">現在も継続して指導しています</span>
       </div>
     </article>
 
     <div class="pro-others rv rv-d2">
-      <div class="pro-slot">
-        <h4>［プロゴルファー②］</h4>
-        <p>お名前・肩書き・コメントを<br>いただき次第、掲載します</p>
-      </div>
-      <div class="pro-slot">
-        <h4>［プロゴルファー③］</h4>
-        <p>お名前・肩書き・コメントを<br>いただき次第、掲載します</p>
-      </div>
-      <div class="pro-slot">
-        <h4>［プロゴルファー④］</h4>
-        <p>お名前・肩書き・コメントを<br>いただき次第、掲載します</p>
-      </div>
+      <article class="pro-card">
+        <div class="slot slot-square">[PHOTO: 小楠梨紗プロ<br>／ 正方形]</div>
+        <p class="pro-headline">飛距離が<mark>10ヤード</mark>伸びました。</p>
+        <p class="pro-body">
+          NeeDSでトレーニングを始めてからヘッドスピードがアップして、飛距離が10ヤード伸びました。一人ひとりの身体ときちんと向き合い、その人に必要なゴルフに結びつけたメニューを組んでいただけるので、飛距離アップやスイング改善に効果的です。
+        </p>
+        <p class="pro-by"><b>小楠 梨紗</b> プロ</p>
+      </article>
+
+      <article class="pro-card">
+        <div class="slot slot-square">[PHOTO: 釣浦郁真プロ<br>／ 正方形]</div>
+        <p class="pro-headline">鍛えた筋力が、そのまま<mark>スイングの力</mark>に変わった。</p>
+        <p class="pro-body">
+          これまではウエイトトレーニングを中心に取り組んできましたが、NeeDSでトレーニングを始めてからは、瞬発系のトレーニングやゴルフの動きに特化したメニューを通して、ウエイトで鍛えた筋力を実際のスイングで使える動きへと落とし込めるようになりました。スイングのキレや再現性も向上しました。
+        </p>
+        <p class="pro-by"><b>釣浦 郁真</b> プロ</p>
+      </article>
+
+      <article class="pro-card">
+        <div class="slot slot-square">[PHOTO: プロゴルファー④<br>／ 正方形]</div>
+        <p class="pro-headline">［見出しになる一言］</p>
+        <p class="pro-body">
+          ［コメント本文をいただき次第、ここに掲載します］
+        </p>
+        <p class="pro-by"><b>［お名前］</b> プロ</p>
+      </article>
     </div>
+    <p class="pro-disc rv">※ 掲載内容は個人の感想であり、成果を保証するものではありません。</p>
   </div>
 </section>
 
