@@ -157,33 +157,12 @@ table{ border-collapse:collapse; }
 .bg-navy .cta-note strong,
 .site-footer .cta-note strong{ color:var(--gold-soft); }
 
-/* ---------- photo placeholders ---------- */
-.ph{
-  position:relative; width:100%;
-  background:
-    repeating-linear-gradient(45deg, rgba(0,0,0,.014) 0 12px, transparent 12px 24px),
-    #dedcd7;
-  border:1px solid var(--line);
-  display:flex; align-items:center; justify-content:center;
-  overflow:hidden;
-}
-.ph-inner{ padding:18px; text-align:center; max-width:88%; }
-.ph-cam{ font-size:19px; line-height:1; display:block; opacity:.55; }
-.ph-txt{
-  margin-top:9px; font-size:11.5px; line-height:1.75; letter-spacing:.05em;
-  color:#6c6a64; font-weight:500;
-}
-.ph-tag{
-  margin-top:8px; display:inline-block;
-  font-family:var(--ff-en); font-size:10px; letter-spacing:.18em; text-transform:uppercase;
-  color:#8b8880; border-top:1px solid #c7c4bd; padding-top:7px;
-}
-.ph-ratio-hero{ aspect-ratio:3/4; }
-.ph-ratio-wide{ aspect-ratio:16/10; }
-.ph-ratio-square{ aspect-ratio:1/1; }
-.ph-ratio-portrait{ aspect-ratio:3/4; }
-.ph-ratio-tall{ aspect-ratio:4/5; }
-@media (min-width:768px){ .ph-ratio-hero{ aspect-ratio:16/9; } }
+/* ---------- photos ---------- */
+.photo{ width:100%; display:block; object-fit:cover; background:#dcdad5; }
+.r-tall{ aspect-ratio:4/5; }
+.r-portrait{ aspect-ratio:3/4; object-position:48% center; }
+.r-square{ aspect-ratio:1/1; }
+.r-wide{ aspect-ratio:16/10; }
 
 /* ---------- reveal ---------- */
 .rv{ opacity:0; transform:translateY(22px); transition:opacity .9s cubic-bezier(.22,.61,.36,1), transform .9s cubic-bezier(.22,.61,.36,1); }
@@ -206,13 +185,9 @@ table{ border-collapse:collapse; }
 }
 .site-header.stuck{ border-bottom-color:var(--line-soft); }
 .header-in{ width:100%; max-width:var(--wrap); margin:0 auto; padding:0 var(--pad); display:flex; align-items:center; gap:18px; }
-.logo-ph{
-  display:flex; align-items:center; justify-content:center;
-  width:150px; height:34px; flex:0 0 auto;
-  border:1px dashed #c3c9ce; background:#f4f4f2;
-  font-family:var(--ff-en); font-size:9.5px; letter-spacing:.14em; color:#8a9298; text-align:center; line-height:1.3;
-}
-.logo-ph.on-navy{ border-color:rgba(255,255,255,.34); background:rgba(255,255,255,.06); color:rgba(255,255,255,.62); }
+.logo-img{ height:38px; width:auto; flex:0 0 auto; }
+@media (min-width:768px){ .logo-img{ height:42px; } }
+.footer-logo{ height:64px; width:auto; display:block; }
 .gnav{ display:none; margin-left:auto; }
 .gnav ul{ display:flex; gap:26px; }
 .gnav a{ font-size:12px; letter-spacing:.1em; color:var(--ink); position:relative; padding-bottom:3px; }
@@ -227,7 +202,6 @@ table{ border-collapse:collapse; }
 /* ================= hero ================= */
 .hero{ padding-top:var(--header-h); background:var(--paper); position:relative; }
 .hero-media{ position:relative; background:#dcdad5; }
-.hero-media .ph{ border-left:0; border-right:0; }
 .hero-photo{
   width:100%; display:block;
   aspect-ratio:1/1; object-fit:cover; object-position:82% center;
@@ -305,7 +279,6 @@ table{ border-collapse:collapse; }
 
 .pillars{ margin-top:52px; display:grid; gap:38px; }
 .pillar{ position:relative; }
-.pillar .ph{ border-color:rgba(255,255,255,.14); }
 .pillar-head{ display:flex; align-items:baseline; gap:12px; margin-bottom:16px; }
 .pillar-no{ font-family:var(--ff-en); font-size:13px; letter-spacing:.22em; color:var(--gold-soft); font-weight:600; }
 .pillar-name{ font-family:var(--ff-mn); font-size:19px; font-weight:500; color:#fff; letter-spacing:.06em; }
@@ -469,8 +442,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="siteHeader">
   <div class="header-in">
-    <!-- [LOGO PLACEHOLDER] 白背景用（横長・推奨 600×136px / SVG or PNG透過） -->
-    <div class="logo-ph" role="img" aria-label="プライベートジムNeeDS ロゴ">[LOGO&nbsp;/&nbsp;LIGHT&nbsp;BG]</div>
+    <a href="#hero" aria-label="プライベートジムNeeDS">
+      <img class="logo-img" src="images/logo.png" alt="プライベートジムNeeDS" width="420" height="313">
+    </a>
     <nav class="gnav" aria-label="メインメニュー">
       <ul>
         <li><a href="#pain">お悩み</a></li>
@@ -601,13 +575,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="pillars">
       <article class="pillar rv">
-        <div class="ph ph-ratio-tall">
-          <div class="ph-inner">
-            <span class="ph-cam" aria-hidden="true">📷</span>
-            <p class="ph-txt">写真：トレーナーが胸椎の回旋可動域をチェック／指導している様子（上半身のアップ）</p>
-            <span class="ph-tag">[PHOTO: 胸椎の回旋を評価・指導する様子 / 4:5]</span>
-          </div>
-        </div>
+        <img class="photo r-tall" src="images/p01.jpg"
+             alt="トレーナーが会員の胸椎の回旋をチェックしている様子"
+             width="800" height="1000" loading="lazy" decoding="async">
         <div class="pillar-head" style="margin-top:22px;">
           <span class="pillar-no">01</span>
           <h3 class="pillar-name">胸椎の回旋<small>Thoracic Rotation</small></h3>
@@ -618,13 +588,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </article>
 
       <article class="pillar rv rv-d1">
-        <div class="ph ph-ratio-tall">
-          <div class="ph-inner">
-            <span class="ph-cam" aria-hidden="true">📷</span>
-            <p class="ph-txt">写真：トレーナーが股関節の動きを指導している様子（下半身・ヒップヒンジ動作）</p>
-            <span class="ph-tag">[PHOTO: トレーナーが股関節の動きを指導する様子 / 4:5]</span>
-          </div>
-        </div>
+        <img class="photo r-tall" src="images/p02.jpg"
+             alt="トレーナーが股関節の動きを指導している様子"
+             width="800" height="1000" loading="lazy" decoding="async">
         <div class="pillar-head" style="margin-top:22px;">
           <span class="pillar-no">02</span>
           <h3 class="pillar-name">股関節の動き<small>Hip Mobility</small></h3>
@@ -635,13 +601,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </article>
 
       <article class="pillar rv rv-d2">
-        <div class="ph ph-ratio-tall">
-          <div class="ph-inner">
-            <span class="ph-cam" aria-hidden="true">📷</span>
-            <p class="ph-txt">写真：肩甲骨まわりのトレーニング／可動域チェックを行う様子（背面から）</p>
-            <span class="ph-tag">[PHOTO: 肩甲骨の可動域トレーニングの様子 / 4:5]</span>
-          </div>
-        </div>
+        <img class="photo r-tall" src="images/p03.jpg"
+             alt="肩甲骨まわりの可動域トレーニングの様子"
+             width="800" height="1000" loading="lazy" decoding="async">
         <div class="pillar-head" style="margin-top:22px;">
           <span class="pillar-no">03</span>
           <h3 class="pillar-name">肩甲骨の動き<small>Scapular Motion</small></h3>
@@ -749,13 +711,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="trainer rv rv-d1">
       <div>
-        <div class="ph ph-ratio-portrait">
-          <div class="ph-inner">
-            <span class="ph-cam" aria-hidden="true">📷</span>
-            <p class="ph-txt">写真：トレーナーの縦長ポートレート（無地の壁を背景に、腕組みではなく自然な表情で）</p>
-            <span class="ph-tag">[PHOTO: 担当トレーナーのポートレート / 3:4 縦長]</span>
-          </div>
-        </div>
+        <img class="photo r-portrait" src="images/p04.jpg"
+             alt="プライベートジムNeeDS 担当トレーナー"
+             width="1100" height="825" loading="lazy" decoding="async">
       </div>
       <div>
         <h3 class="trainer-name">［トレーナー氏名］<small>Personal Trainer</small></h3>
@@ -787,39 +745,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="voices">
       <article class="rv">
-        <div class="ph ph-ratio-square voice-ph">
-          <div class="ph-inner">
-            <span class="ph-cam" aria-hidden="true">📷</span>
-            <p class="ph-txt">写真：50代男性会員のバストアップ（ジム内・自然光／正方形トリミング）</p>
-            <span class="ph-tag">[PHOTO: 50代男性会員の顔写真 / 1:1]</span>
-          </div>
-        </div>
+        <img class="photo r-square voice-ph" src="images/p05.jpg"
+             alt="50代男性会員がトレーニングをしている様子"
+             width="800" height="800" loading="lazy" decoding="async">
         <p class="voice-quote">「ドライバーが、力まなくても飛ぶようになりました」</p>
         <p class="voice-txt">半年で平均スコアが8打縮まりました。何より、18ホール歩いても後半でバテなくなったのが大きいです。</p>
         <p class="voice-name"><b>［お客様氏名］様</b>／52歳・会社役員<br>ゴルフ歴18年・通われて8ヶ月</p>
       </article>
 
       <article class="rv rv-d1">
-        <div class="ph ph-ratio-square voice-ph">
-          <div class="ph-inner">
-            <span class="ph-cam" aria-hidden="true">📷</span>
-            <p class="ph-txt">写真：60代男性会員のバストアップ（ジム内・自然光／正方形トリミング）</p>
-            <span class="ph-tag">[PHOTO: 60代男性会員の顔写真 / 1:1]</span>
-          </div>
-        </div>
+        <img class="photo r-square voice-ph" src="images/p06.jpg"
+             alt="60代男性会員がトレーニングをしている様子"
+             width="800" height="800" loading="lazy" decoding="async">
         <p class="voice-quote">「ラウンド翌日の腰痛が、なくなりました」</p>
         <p class="voice-txt">股関節が動くようになってから、腰で無理に捻らなくなったそうです。理由を説明してもらえるので納得して続けられます。</p>
         <p class="voice-name"><b>［お客様氏名］様</b>／61歳・自営業<br>ゴルフ歴30年・通われて1年2ヶ月</p>
       </article>
 
       <article class="rv rv-d2">
-        <div class="ph ph-ratio-square voice-ph">
-          <div class="ph-inner">
-            <span class="ph-cam" aria-hidden="true">📷</span>
-            <p class="ph-txt">写真：40代男性会員のバストアップ（ジム内・自然光／正方形トリミング）</p>
-            <span class="ph-tag">[PHOTO: 40代男性会員の顔写真 / 1:1]</span>
-          </div>
-        </div>
+        <img class="photo r-square voice-ph" src="images/p07.jpg"
+             alt="40代男性会員がトレーニングをしている様子"
+             width="800" height="800" loading="lazy" decoding="async">
         <p class="voice-quote">「レッスンで言われていた意味が、やっと分かった」</p>
         <p class="voice-txt">「捻転差」を作れと言われ続けてきましたが、そもそも捻れる体ではなかったと。初回の評価でそれが分かった時点で来た甲斐がありました。</p>
         <p class="voice-name"><b>［お客様氏名］様</b>／46歳・会社員<br>ゴルフ歴9年・通われて5ヶ月</p>
@@ -950,13 +896,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="shops">
       <article class="rv">
-        <div class="ph ph-ratio-wide shop-ph">
-          <div class="ph-inner">
-            <span class="ph-cam" aria-hidden="true">📷</span>
-            <p class="ph-txt">写真：六甲道店の内観（トレーニングスペース全景・横長）</p>
-            <span class="ph-tag">[PHOTO: 六甲道店 内観 / 16:10]</span>
-          </div>
-        </div>
+        <img class="photo r-wide shop-ph" src="images/p08.jpg"
+             alt="プライベートジムNeeDS 六甲道店の内観"
+             width="1200" height="800" loading="lazy" decoding="async">
         <h3 class="shop-name"><small>Rokkomichi</small>プライベートジムNeeDS 六甲道店</h3>
         <dl class="shop-dl">
           <div><dt>住所</dt><dd>〒657-0037<br>兵庫県神戸市灘区備後町3丁目1-23<br>ノモズヴィレッジ101</dd></div>
@@ -967,13 +909,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </article>
 
       <article class="rv rv-d1">
-        <div class="ph ph-ratio-wide shop-ph">
-          <div class="ph-inner">
-            <span class="ph-cam" aria-hidden="true">📷</span>
-            <p class="ph-txt">写真：六甲風の郷店の内観（トレーニングスペース全景・横長）</p>
-            <span class="ph-tag">[PHOTO: 六甲風の郷店 内観 / 16:10]</span>
-          </div>
-        </div>
+        <img class="photo r-wide shop-ph" src="images/p09.jpg"
+             alt="プライベートジムNeeDS 六甲風の郷店の内観"
+             width="1200" height="800" loading="lazy" decoding="async">
         <h3 class="shop-name"><small>Rokko Kazenosato</small>プライベートジムNeeDS 六甲風の郷店</h3>
         <dl class="shop-dl">
           <div><dt>住所</dt><dd>〒657-0053<br>兵庫県神戸市灘区六甲町4丁目1-15 2F</dd></div>
@@ -993,8 +931,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="footer-top">
       <div class="rv">
-        <!-- [LOGO PLACEHOLDER] 紺背景用（白抜き・横長／推奨 600×136px / SVG or PNG透過） -->
-        <div class="logo-ph on-navy" role="img" aria-label="プライベートジムNeeDS ロゴ（白抜き）">[LOGO&nbsp;/&nbsp;DARK&nbsp;BG]</div>
+        <img class="footer-logo" src="images/logo.png" alt="プライベートジムNeeDS" width="420" height="313">
         <p class="footer-txt">
           動きが変われば、スイングが変わる。<br>
           神戸・六甲道で、ゴルファーの体づくりを専門にサポートしています。
