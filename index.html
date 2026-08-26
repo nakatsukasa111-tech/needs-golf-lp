@@ -176,6 +176,52 @@ table{ border-collapse:collapse; }
 .r-portrait{ aspect-ratio:3/4; object-position:48% center; }
 .r-square{ aspect-ratio:1/1; }
 .r-wide{ aspect-ratio:16/10; }
+/* 実績バー */
+.proof{ background:var(--paper-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.proof-row{ display:grid; grid-template-columns:1fr; }
+.proof-row li{ padding:22px 4px; text-align:center; }
+.proof-row li + li{ border-top:1px solid var(--line-soft); }
+.proof-row b{
+  display:block; font-family:var(--ff-mn); font-weight:500; font-size:25px;
+  color:var(--navy); letter-spacing:.02em; line-height:1.3;
+}
+.proof-row span{ display:block; margin-top:7px; font-size:11.5px; color:var(--text); letter-spacing:.03em; line-height:1.7; }
+@media (min-width:768px){
+  .proof-row{ grid-template-columns:repeat(3,1fr); }
+  .proof-row li{ padding:30px 18px; }
+  .proof-row li + li{ border-top:0; border-left:1px solid var(--line-soft); }
+  .proof-row b{ font-size:30px; }
+  .proof-row span{ font-size:12.5px; }
+}
+
+/* プロゴルファーの声 */
+.pro-main{ margin-top:44px; display:grid; gap:26px; }
+.pro-name{ font-family:var(--ff-mn); font-size:23px; font-weight:500; color:var(--ink); letter-spacing:.05em; }
+.pro-name small{ display:block; font-size:11.5px; letter-spacing:.14em; color:var(--gold); margin-top:8px; font-family:var(--ff-jp); font-weight:500; }
+.pro-quote{
+  margin-top:22px; padding-left:20px; border-left:2px solid var(--gold-soft);
+  font-family:var(--ff-mn); font-size:17px; line-height:1.95; color:var(--ink); letter-spacing:.03em;
+}
+.pro-quote em{ font-style:normal; color:var(--text-mute); font-family:var(--ff-jp); font-size:13px; }
+.pro-status{
+  margin-top:22px; display:inline-block; font-size:11.5px; letter-spacing:.06em;
+  color:var(--navy); border:1px solid rgba(13,102,155,.3); padding:6px 13px;
+}
+.slot{
+  border:1px dashed #c6ccd1; background:#f4f5f6; color:#7c858c;
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  font-size:11.5px; line-height:1.8; padding:18px; letter-spacing:.04em;
+}
+.slot-portrait{ aspect-ratio:3/4; }
+.pro-others{ margin-top:48px; padding-top:34px; border-top:1px solid var(--line); display:grid; gap:26px; }
+.pro-others h4{ font-family:var(--ff-mn); font-size:14px; font-weight:500; color:var(--ink); letter-spacing:.05em; }
+.pro-slot{ border:1px dashed #c6ccd1; background:#f4f5f6; padding:22px; }
+.pro-slot p{ margin-top:12px; font-size:11.5px; line-height:1.85; color:#7c858c; }
+@media (min-width:768px){
+  .pro-main{ grid-template-columns:280px 1fr; gap:48px; align-items:start; }
+  .pro-quote{ font-size:19px; }
+  .pro-others{ grid-template-columns:repeat(3,1fr); gap:24px; }
+}
 .img-wrap{ position:relative; }
 .img-badge{
   position:absolute; left:0; bottom:0;
@@ -471,6 +517,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="#concept">コンセプト</a></li>
         <li><a href="#method">トレーニング</a></li>
         <li><a href="#trainer">トレーナー</a></li>
+        <li><a href="#pro">プロの声</a></li>
         <li><a href="#faq">よくある質問</a></li>
         <li><a href="#access">店舗</a></li>
       </ul>
@@ -517,6 +564,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ 実績バー ============ -->
+<section class="proof">
+  <div class="wrap">
+    <ul class="proof-row rv">
+      <li>
+        <b>30名以上</b>
+        <span>プロゴルファーの指導・育成<br>（男女・ツアープロを含む）</span>
+      </li>
+      <li>
+        <b>のべ20,000回超</b>
+        <span>一般の方への指導実績</span>
+      </li>
+      <li>
+        <b>現在も継続中</b>
+        <span>ツアープロが通う<br>トレーニング</span>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -746,6 +813,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <ul class="career">
           <li>プロ野球球団（阪神タイガース）でのトレーニング指導実績</li>
           <li>MLB傘下マイナーリーグ球団の選手に対する指導実績</li>
+          <li>元プロ野球選手・上園選手のトレーニング指導（プロ野球在籍当時）</li>
           <li>回旋動作・投球／打撃動作の分析と改善プログラム設計</li>
           <li>40〜60代の一般ゴルファーに対する指導実績多数</li>
         </ul>
@@ -754,8 +822,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ============ プロゴルファーの声 ============ -->
+<section class="sec" id="pro">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Pro Golfer <span class="jp">プロゴルファーの声</span></p>
+      <h2 class="sec-title">
+        ツアープロが、<br>
+        <span class="accent">今も通い続けている理由。</span>
+      </h2>
+      <div class="rule"></div>
+      <p class="lead">
+        NeeDSには、プロゴルファーの方々もトレーニングに通われています。技術ではなく「体の動き」を専門に扱うため、すでに完成されたスイングを持つプロにとっても、必要とされる領域があるからです。
+      </p>
+    </div>
+
+    <article class="pro-main rv rv-d1">
+      <div>
+        <!-- 権利処理済みの写真が用意でき次第、img に差し替え -->
+        <div class="slot slot-portrait">
+          [PHOTO: 河合庄司プロ<br>NeeDSでのトレーニング中の写真<br>／ 3:4 縦長]
+        </div>
+      </div>
+      <div>
+        <h3 class="pro-name">河合 庄司<small>プロゴルファー ／ NeeDS会員</small></h3>
+        <blockquote class="pro-quote">
+          ［河合プロからいただいたコメントを、ここに掲載します］
+          <em><br>※ 掲載許可済みのコメントを差し込み予定</em>
+        </blockquote>
+        <span class="pro-status">現在も継続して指導しています</span>
+      </div>
+    </article>
+
+    <div class="pro-others rv rv-d2">
+      <div class="pro-slot">
+        <h4>［プロゴルファー②］</h4>
+        <p>お名前・肩書き・コメントを<br>いただき次第、掲載します</p>
+      </div>
+      <div class="pro-slot">
+        <h4>［プロゴルファー③］</h4>
+        <p>お名前・肩書き・コメントを<br>いただき次第、掲載します</p>
+      </div>
+      <div class="pro-slot">
+        <h4>［プロゴルファー④］</h4>
+        <p>お名前・肩書き・コメントを<br>いただき次第、掲載します</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 05 会員の声 ============ -->
-<section class="sec" id="voice">
+<section class="sec bg-off" id="voice">
   <div class="wrap">
     <div class="rv">
       <p class="eyebrow">Voice <span class="jp">通われている方の声</span></p>
