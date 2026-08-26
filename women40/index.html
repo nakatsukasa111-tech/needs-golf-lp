@@ -255,7 +255,15 @@ table{ border-collapse:collapse; }
 .hero-meta li + li{ border-left:1px solid var(--line-soft); }
 .hero-meta b{ display:block; font-family:var(--ff-mn); font-size:16px; color:var(--ink); font-weight:500; letter-spacing:.02em; margin-bottom:2px; }
 @media (max-width:409px){ .hero-meta li{ font-size:10px; letter-spacing:0; } }
-.hero-cta{ padding:0 0 66px; }
+.hero-bridge{
+  margin-top:30px; padding-top:26px; border-top:1px solid var(--line);
+  font-family:var(--ff-mn); font-weight:500; font-size:19px; line-height:1.7;
+  letter-spacing:.04em; color:var(--ink);
+}
+.hero-bridge em{ font-style:normal; color:var(--navy); }
+.hero-cta{ padding:0 0 66px; margin-top:26px; }
+@media (min-width:768px){ .hero-bridge{ font-size:24px; } }
+@media (min-width:1024px){ .hero-bridge{ font-size:27px; } }
 @media (min-width:768px){
   .hero-photo{ aspect-ratio:16/9; max-height:82vh; object-position:center; }
   .hero-title{ font-size:44px; }
@@ -301,18 +309,27 @@ table{ border-collapse:collapse; }
 }
 @media (min-width:768px){ .concept-statement{ font-size:40px; } }
 
-/* 5つのキーワード */
-.kw{ margin-top:44px; display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.16); }
-.kw li{
-  background:var(--navy-ink); padding:20px 8px; text-align:center;
-  font-family:var(--ff-mn); font-size:15px; letter-spacing:.08em; color:#fff; line-height:1.5;
+/* 5つの軸（縦並び・解説つき） */
+.axis-head{
+  margin-top:46px; font-family:var(--ff-mn); font-size:18px; line-height:1.8;
+  letter-spacing:.05em; color:#fff;
 }
-.kw li small{ display:block; font-family:var(--ff-en); font-size:10px; letter-spacing:.18em; color:var(--gold-soft); margin-top:6px; font-weight:600; }
-.kw li:last-child:nth-child(odd){ grid-column:1 / -1; }
-@media (min-width:700px){
-  .kw{ grid-template-columns:repeat(5,1fr); }
-  .kw li{ padding:24px 6px; font-size:16px; }
-  .kw li:last-child:nth-child(odd){ grid-column:auto; }
+@media (min-width:768px){ .axis-head{ font-size:21px; } }
+.axis{ margin-top:22px; border-top:1px solid rgba(255,255,255,.2); }
+.axis .row{ padding:22px 0; border-bottom:1px solid rgba(255,255,255,.14); }
+.axis dt{
+  font-family:var(--ff-mn); font-size:24px; font-weight:500; color:#fff;
+  letter-spacing:.1em; line-height:1.4;
+}
+.axis dt small{
+  display:block; font-family:var(--ff-en); font-size:11px; letter-spacing:.2em;
+  color:var(--gold-soft); font-weight:600; margin-top:6px;
+}
+.axis dd{ margin-top:12px; font-size:13.5px; line-height:2.0; color:rgba(255,255,255,.78); }
+@media (min-width:768px){
+  .axis .row{ display:grid; grid-template-columns:260px 1fr; gap:44px; align-items:baseline; padding:26px 0; }
+  .axis dt{ font-size:29px; }
+  .axis dd{ margin-top:0; padding-left:44px; border-left:1px solid rgba(255,255,255,.16); font-size:14.5px; }
 }
 
 .pillars{ margin-top:52px; display:grid; gap:36px; }
@@ -327,10 +344,10 @@ table{ border-collapse:collapse; }
   .pillars > *:nth-child(3){ margin-top:80px; }
 }
 .concept-foot{
-  margin-top:54px; padding-top:28px; border-top:1px solid rgba(255,255,255,.16);
-  font-family:var(--ff-mn); font-size:17px; line-height:1.95; color:#fff; letter-spacing:.04em;
+  margin-top:60px; padding-top:34px; border-top:1px solid rgba(255,255,255,.16);
+  font-family:var(--ff-mn); font-size:22px; line-height:1.8; color:#fff; letter-spacing:.05em;
 }
-@media (min-width:768px){ .concept-foot{ font-size:20px; max-width:640px; margin-left:auto; } }
+@media (min-width:768px){ .concept-foot{ font-size:32px; text-align:center; padding-top:44px; } }
 
 /* ================= 03 実績 ================= */
 .proof{ margin-top:40px; display:grid; grid-template-columns:repeat(2,1fr); gap:0; border-top:1px solid var(--line); border-left:1px solid var(--line); }
@@ -352,6 +369,15 @@ table{ border-collapse:collapse; }
   .proof span{ font-size:12.5px; }
 }
 .proof-note{ margin-top:26px; font-size:11.5px; line-height:1.9; color:var(--text-mute); }
+.years{
+  margin-top:20px; font-family:var(--ff-mn); font-size:19px; line-height:1.75;
+  letter-spacing:.05em; color:var(--ink);
+}
+.years em{ font-style:normal; color:var(--navy); }
+@media (min-width:768px){ .years{ font-size:23px; } }
+.trial-sub{
+  margin-top:20px; font-size:13px; line-height:2.0; color:rgba(255,255,255,.72); letter-spacing:.04em;
+}
 
 /* ================= 04 トレーナー ================= */
 .staff{ margin-top:44px; display:grid; gap:34px; }
@@ -494,6 +520,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><b>完全個室</b>マンツーマン</li>
         <li><b>徒歩5分</b>JR六甲道駅</li>
       </ul>
+      <p class="hero-bridge">
+        <span class="nw">だからこそNeeDSは、</span><br>
+        <em><span class="nw">スポーツ由来の</span><span class="nw">トレーニングメソッド</span></em><span class="nw">です。</span>
+      </p>
       <div class="cta-block hero-cta">
         <a class="btn btn-line" href="https://lin.ee/WEFp411" target="_blank" rel="noopener" data-event="cta_click" data-cta="hero">まずは体の状態を見てもらう<span class="arw" aria-hidden="true">→</span></a>
         <p class="cta-note">
@@ -526,8 +556,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
 
         <p class="issue-close">
-          <span class="nw">どれも、</span><em>筋力と、体の動き</em><span class="nw">が</span><br>
-          <span class="nw">足りていないサインです。</span>
+          <span class="nw">心当たりがあるなら、</span><br>
+          <em><span class="nw">いまが、</span><span class="nw">始めどきです。</span></em>
         </p>
       </div>
 
@@ -550,19 +580,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="nw">体重計の数字より、</span><br>
         <span class="nw">鏡に映る姿勢を。</span>
       </p>
-      <p class="lead" style="max-width:620px;">
-        目指すのは、細さではなく<b>機能的な体</b>です。<br>
-        よく動く体は姿勢が整い、シルエットの印象が変わります。
+      <p class="lead" style="max-width:640px;">
+        数字も、もちろん大切です。<br>
+        でも、それ以上に確かなのは、ご自身の感覚のほうだと考えています。<br><br>
+        朝、起きたときの体の軽さ。鏡に映る、自分の立ち姿。<br>
+        <b>「体が戻ってきた」「自分の体で良かった」</b>と思えること。<br>
+        自分の体に、また自信が持てること。NeeDSが目指しているのは、そちらです。
       </p>
     </div>
 
-    <ul class="kw rv rv-d1">
-      <li>肩甲骨<small>Scapula</small></li>
-      <li>股関節<small>Hip</small></li>
-      <li>体幹<small>Core</small></li>
-      <li>インナーマッスル<small>Inner Muscle</small></li>
-      <li>バランス<small>Balance</small></li>
-    </ul>
+    <div class="rv rv-d1">
+      <p class="axis-head"><span class="nw">この5つを軸に、</span><span class="nw">トレーニングを行います。</span></p>
+      <dl class="axis">
+        <div class="row">
+          <dt>肩甲骨<small>Scapula</small></dt>
+          <dd>動かすほどに血のめぐりが良くなり、肩まわりが軽くなります。胸が開いて、姿勢も自然と伸びていきます。</dd>
+        </div>
+        <div class="row">
+          <dt>股関節<small>Hip</small></dt>
+          <dd>体の中でいちばん大きな関節で、立つ・歩く・座るの土台です。動くようになると腰への負担が減り、歩幅が出て、下半身のめぐりも良くなります。</dd>
+        </div>
+        <div class="row">
+          <dt>体幹<small>Core</small></dt>
+          <dd>姿勢を支える中心です。ここが働くと立ち姿が変わり、同じ動作でも疲れにくい体になっていきます。</dd>
+        </div>
+        <div class="row">
+          <dt>インナーマッスル<small>Inner Muscle</small></dt>
+          <dd>体を内側から支える深い筋肉です。使えるようになるほど、基礎代謝の土台も整っていきます。</dd>
+        </div>
+        <div class="row">
+          <dt>バランス<small>Balance</small></dt>
+          <dd>左右差や重心のクセを整えます。体の使い方が偏らなくなり、動きにも見た目にも安定感が出ます。</dd>
+        </div>
+      </dl>
+    </div>
 
     <div class="pillars">
       <figure class="rv">
@@ -609,13 +660,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="rv">
       <p class="eyebrow">Record <span class="jp">選ばれている理由</span></p>
       <h2 class="sec-title">
-        <span class="nw">プロスポーツの現場と</span><br>
-        <span class="accent"><span class="nw">同じ基準で、体を見ます。</span></span>
+        <span class="nw">プロアスリートやドクターにも</span><br>
+        <span class="accent"><span class="nw">選ばれている方法を、</span><span class="nw">あなたに。</span></span>
       </h2>
       <div class="rule"></div>
       <p class="lead">
-        プロ野球・MLB傘下球団の選手を指導してきたトレーナーが在籍しています。<br>
-        スポーツの現場で培った、動きをつくるトレーニングです。
+        メソッドの開発者は、プロ野球やMLB傘下の球団で、数多くのプロアスリートを指導してきました。<br>
+        そのトレーニングを、<b>運動の経験がない方でも無理なく取り組める形にアレンジ</b>したものが、NeeDSのメソッドです。
+        <br><br>
+        お客様にはプロアスリートやドクターもいらっしゃいますが、通われている方の大半は、
+        運動の習慣がないまま40代・50代を迎えられた一般の方です。どうぞ安心してお越しください。
       </p>
     </div>
 
@@ -636,6 +690,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="eyebrow">Trainer <span class="jp">担当するトレーナー</span></p>
       <h2 class="sec-title"><span class="nw">はじめての方こそ、</span><span class="accent"><span class="nw">安心して。</span></span></h2>
       <div class="rule"></div>
+      <p class="years"><span class="nw">だからNeeDSは、</span><em><span class="nw">10年以上</span><span class="nw">選ばれ続けています。</span></em></p>
     </div>
 
     <div class="staff">
@@ -681,14 +736,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="rv">
       <p class="eyebrow">Free Trial <span class="jp">まずは、無料体験から</span></p>
       <h2 class="sec-title">
-        <span class="nw">続けるかどうかは、</span><br>
-        <span style="color:var(--gold-soft);"><span class="nw">体験してから</span><span class="nw">決めてください。</span></span>
+        <span class="nw">まずは、</span><span style="color:var(--gold-soft);"><span class="nw">無料体験で</span><span class="nw">お試しください。</span></span>
       </h2>
+      <p class="trial-sub">
+        無理な勧誘はいたしませんので、ご安心ください。<br>
+        ご相談のみでも大丈夫です。
+      </p>
 
       <dl class="trial-grid">
         <dt>Price</dt>
         <!-- 通常価格を見せ消しで併記する場合は、0円 の前に <s>通常 ○,○○○円</s> を追加してください -->
-        <dd><span class="trial-price">0円</span><small>初回に限り無料。当日の勧誘はいたしません。</small></dd>
+        <dd><span class="trial-price">0円</span><small>初回の体験に限り無料です。</small></dd>
         <dt>Time</dt>
         <dd>約60分<small>カウンセリング／姿勢・動作のチェック／トレーニング体験</small></dd>
         <dt>Wear</dt>
