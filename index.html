@@ -35,6 +35,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 :root{
   --navy:       #0d669b;
+  --cta:        #e5722a;
+  --cta-dark:   #cf611c;
+  --cta-light:  #ee8340;
   --navy-dark:  #084b73;
   --navy-ink:   #0a2c42;
   --ink:        #1d2226;
@@ -119,32 +122,42 @@ table{ border-collapse:collapse; }
 
 /* ---------- buttons ---------- */
 .btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:12px;
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
   font-family:var(--ff-jp); font-weight:500; letter-spacing:.09em;
   border-radius:2px; transition:background .28s ease, color .28s ease, border-color .28s ease, transform .28s ease;
   text-align:center;
 }
 .btn-line{
-  background:var(--navy); color:#fff;
-  padding:18px 18px; font-size:14px; width:100%;
-  letter-spacing:.05em;
-  box-shadow:0 1px 0 rgba(13,102,155,.18);
+  background:linear-gradient(180deg, var(--cta-light) 0%, var(--cta) 55%, var(--cta-dark) 100%);
+  color:#fff; font-weight:700;
+  padding:17px 12px; font-size:13px; width:100%; line-height:1.45;
+  letter-spacing:.02em; border-radius:12px;
+  box-shadow:0 8px 20px rgba(207,97,28,.34), 0 2px 5px rgba(207,97,28,.26), inset 0 1px 0 rgba(255,255,255,.28);
 }
-.btn-line:hover{ background:var(--navy-dark); }
+.btn-line:hover{
+  background:linear-gradient(180deg, #f28c48 0%, #e97a33 55%, #d66720 100%);
+  transform:translateY(-2px);
+  box-shadow:0 14px 28px rgba(207,97,28,.40), 0 3px 7px rgba(207,97,28,.28), inset 0 1px 0 rgba(255,255,255,.32);
+}
+.btn-line:active{ transform:translateY(0); box-shadow:0 4px 12px rgba(207,97,28,.3); }
 .btn-line .arw{ font-family:var(--ff-en); font-size:15px; transition:transform .28s ease; }
 .btn-line:hover .arw{ transform:translateX(4px); }
 .bg-navy .btn-line,
-.site-footer .btn-line{ background:#fff; color:var(--navy); box-shadow:none; }
-.bg-navy .btn-line:hover,
-.site-footer .btn-line:hover{ background:var(--paper-3); color:var(--navy-dark); }
-.btn-mini{
-  background:var(--navy); color:#fff; font-size:12px; letter-spacing:.06em;
-  padding:10px 16px; border-radius:2px; white-space:nowrap;
+.site-footer .btn-line{
+  box-shadow:0 8px 22px rgba(0,0,0,.34), 0 2px 5px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.3);
 }
-.btn-mini:hover{ background:var(--navy-dark); }
+.btn-mini{
+  background:var(--cta); color:#fff; font-size:12px; font-weight:700; letter-spacing:.04em;
+  padding:11px 18px; border-radius:999px; white-space:nowrap;
+  box-shadow:0 4px 12px rgba(207,97,28,.30);
+}
+.btn-mini:hover{ background:var(--cta-dark); transform:translateY(-1px); box-shadow:0 7px 16px rgba(207,97,28,.36); }
 @media (min-width:768px){
-  .btn-line{ width:auto; min-width:340px; padding:21px 46px; font-size:16px; }
-  .btn-ghost{ width:auto; min-width:280px; }
+  .btn{ gap:12px; }
+  .btn-line{
+    width:auto; min-width:430px; padding:21px 38px; font-size:15.5px;
+    letter-spacing:.04em; white-space:nowrap;
+  }
 }
 
 .cta-block{ margin-top:34px; }
@@ -423,7 +436,7 @@ table{ border-collapse:collapse; }
   backdrop-filter:saturate(160%) blur(8px);
 }
 .sticky-cta.show{ transform:none; }
-.sticky-cta .btn-line{ padding:15px 20px; font-size:14px; }
+.sticky-cta .btn-line{ padding:15px 14px; font-size:13.5px; border-radius:10px; }
 .sticky-cta .mini-note{ text-align:center; font-size:10.5px; color:var(--text-mute); margin-bottom:7px; letter-spacing:.06em; }
 @media (min-width:900px){ .sticky-cta{ display:none; } }
 
@@ -455,7 +468,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="#access">店舗</a></li>
       </ul>
     </nav>
-    <a class="btn btn-mini header-cta" href="#line-cta" data-event="cta_click" data-cta="header">無料体験を予約</a>
+    <a class="btn btn-mini header-cta" href="https://lin.ee/WEFp411" target="_blank" rel="noopener" data-event="cta_click" data-cta="header">無料体験を受ける</a>
   </div>
 </header>
 
@@ -490,7 +503,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><b>徒歩5分</b>JR六甲道駅</li>
       </ul>
       <div class="cta-block hero-cta">
-        <a class="btn btn-line" href="#line-cta" data-event="cta_click" data-cta="hero">LINEで無料体験に申し込む<span class="arw" aria-hidden="true">→</span></a>
+        <a class="btn btn-line" href="https://lin.ee/WEFp411" target="_blank" rel="noopener" data-event="cta_click" data-cta="hero">無料でゴルフトレーニングを受ける<span class="arw" aria-hidden="true">→</span></a>
         <p class="cta-note">
           <strong>公式LINEのご登録から、30秒でご予約いただけます。</strong><br>
           ゴルフ歴・運動経験は問いません。まずは今の体の状態を知るところから、お気軽にどうぞ。
@@ -688,7 +701,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="cta-block rv">
-      <a class="btn btn-line" href="#line-cta" data-event="cta_click" data-cta="method">まずは今の可動域を測ってみる（無料）<span class="arw" aria-hidden="true">→</span></a>
+      <a class="btn btn-line" href="https://lin.ee/WEFp411" target="_blank" rel="noopener" data-event="cta_click" data-cta="method">無料で今の可動域を測ってもらう<span class="arw" aria-hidden="true">→</span></a>
       <p class="cta-note">
         <strong>初回の体験は無料です。</strong>その場で動作評価まで受けていただけます。<br>
         当日は手ぶらでお越しいただけます（ウェア・シューズ・タオルは無料でお貸し出し）。
@@ -716,8 +729,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
              width="1100" height="825" loading="lazy" decoding="async">
       </div>
       <div>
-        <h3 class="trainer-name">［トレーナー氏名］<small>Personal Trainer</small></h3>
-        <p class="trainer-role">プライベートジムNeeDS ／ ゴルフパフォーマンス担当</p>
+        <h3 class="trainer-name">中務 正幸<small>Masayuki Nakatsukasa</small></h3>
+        <p class="trainer-role">NeeDSゴルフトレーニングメソッド考案者</p>
         <p class="trainer-txt">
           プロ野球・独立リーグ、MLB傘下マイナー球団の選手に対し、パフォーマンス向上とコンディショニングの指導を行ってきました。専門は「回旋動作」。バッティングとゴルフスイングは、胸椎と股関節を使って体を捻り、その力を末端へ伝えるという点で構造が共通しています。
           <br><br>
@@ -750,7 +763,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
              width="800" height="800" loading="lazy" decoding="async">
         <p class="voice-quote">「ドライバーが、力まなくても飛ぶようになりました」</p>
         <p class="voice-txt">半年で平均スコアが8打縮まりました。何より、18ホール歩いても後半でバテなくなったのが大きいです。</p>
-        <p class="voice-name"><b>［お客様氏名］様</b>／52歳・会社役員<br>ゴルフ歴18年・通われて8ヶ月</p>
+        <p class="voice-name"><b>K.S. 様</b>／52歳・会社役員<br>ゴルフ歴18年・通われて8ヶ月</p>
       </article>
 
       <article class="rv rv-d1">
@@ -759,7 +772,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
              width="800" height="800" loading="lazy" decoding="async">
         <p class="voice-quote">「ラウンド翌日の腰痛が、なくなりました」</p>
         <p class="voice-txt">股関節が動くようになってから、腰で無理に捻らなくなったそうです。理由を説明してもらえるので納得して続けられます。</p>
-        <p class="voice-name"><b>［お客様氏名］様</b>／61歳・自営業<br>ゴルフ歴30年・通われて1年2ヶ月</p>
+        <p class="voice-name"><b>T.M. 様</b>／61歳・自営業<br>ゴルフ歴30年・通われて1年2ヶ月</p>
       </article>
 
       <article class="rv rv-d2">
@@ -768,7 +781,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
              width="800" height="800" loading="lazy" decoding="async">
         <p class="voice-quote">「レッスンで言われていた意味が、やっと分かった」</p>
         <p class="voice-txt">「捻転差」を作れと言われ続けてきましたが、そもそも捻れる体ではなかったと。初回の評価でそれが分かった時点で来た甲斐がありました。</p>
-        <p class="voice-name"><b>［お客様氏名］様</b>／46歳・会社員<br>ゴルフ歴9年・通われて5ヶ月</p>
+        <p class="voice-name"><b>Y.H. 様</b>／46歳・会社員<br>ゴルフ歴9年・通われて5ヶ月</p>
       </article>
     </div>
     <p class="voice-disc rv">※ 掲載内容は個人の感想であり、成果を保証するものではありません。</p>
@@ -806,7 +819,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </p>
 
       <div class="cta-block">
-        <a class="btn btn-line" href="#line-cta" data-event="cta_click" data-cta="trial">今すぐ無料体験を予約する<span class="arw" aria-hidden="true">→</span></a>
+        <a class="btn btn-line" href="https://lin.ee/WEFp411" target="_blank" rel="noopener" data-event="cta_click" data-cta="trial">無料でゴルフトレーニングを受ける<span class="arw" aria-hidden="true">→</span></a>
         <p class="cta-note">
           <strong>ご予約は公式LINEから承っています。</strong><br>
           ご相談・ご質問だけでも構いません。「今の体で通えるか知りたい」といったメッセージも歓迎です。
@@ -936,17 +949,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           動きが変われば、スイングが変わる。<br>
           神戸・六甲道で、ゴルファーの体づくりを専門にサポートしています。
         </p>
-        <ul class="sns">
-          <li><a href="#line-cta" aria-label="LINE公式アカウント" data-event="cta_click" data-cta="footer_sns">LINE</a></li>
-          <li><a href="#" aria-label="Instagram">Instagram</a></li>
-          <li><a href="#" aria-label="Facebook">Facebook</a></li>
-          <li><a href="#" aria-label="YouTube">YouTube</a></li>
-        </ul>
       </div>
 
       <div class="rv rv-d1">
         <p class="cta-note" style="margin-bottom:16px;margin-top:0;"><strong>初回無料体験、受付中です。</strong></p>
-        <a class="btn btn-line" href="#line-cta" data-event="cta_click" data-cta="footer">LINEで無料体験に申し込む<span class="arw" aria-hidden="true">→</span></a>
+        <a class="btn btn-line" href="https://lin.ee/WEFp411" target="_blank" rel="noopener" data-event="cta_click" data-cta="footer">無料でゴルフトレーニングを受ける<span class="arw" aria-hidden="true">→</span></a>
         <p class="cta-note">ご質問だけでもお気軽にどうぞ。担当トレーナーが直接お返事いたします。</p>
       </div>
     </div>
@@ -964,7 +971,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============ STICKY CTA (mobile) ============ -->
 <div class="sticky-cta" id="stickyCta">
   <p class="mini-note">初回無料体験・完全予約制／JR六甲道駅 徒歩5分</p>
-  <a class="btn btn-line" href="#line-cta" data-event="cta_click" data-cta="sticky">LINEで無料体験に申し込む<span class="arw" aria-hidden="true">→</span></a>
+  <a class="btn btn-line" href="https://lin.ee/WEFp411" target="_blank" rel="noopener" data-event="cta_click" data-cta="sticky">無料で体験を受ける<span class="arw" aria-hidden="true">→</span></a>
 </div>
 
 <script>
