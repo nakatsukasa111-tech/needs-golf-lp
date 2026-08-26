@@ -226,7 +226,7 @@ table{ border-collapse:collapse; }
 .hero-media{ position:relative; background:#e3ded6; }
 .hero-photo{
   width:100%; display:block;
-  aspect-ratio:1/1; object-fit:cover; object-position:38% center;
+  aspect-ratio:1/1; object-fit:cover; object-position:55% center;
 }
 .hero-body{ padding:0 var(--pad); }
 .hero-card{
@@ -392,25 +392,6 @@ table{ border-collapse:collapse; }
 @media (min-width:768px){ .staff{ grid-template-columns:repeat(3,1fr); gap:36px; } }
 .staff-note{ margin-top:30px; font-size:11.5px; line-height:1.9; color:var(--text-mute); }
 
-/* ---- 動画 ---- */
-.movie{ margin-top:34px; }
-.movie video{
-  width:100%; height:auto; display:block; aspect-ratio:16/9;
-  background:var(--navy-ink); object-fit:cover;
-}
-.movie-note{ margin-top:12px; font-size:11.5px; line-height:1.9; color:var(--text-mute); letter-spacing:.05em; }
-
-/* ---- ご利用いただいているプロフェッショナル ---- */
-.pros{ margin-top:38px; display:grid; grid-template-columns:1fr 1fr; gap:26px; max-width:520px; }
-.pros img{ width:100%; }
-.pros-name{ margin-top:14px; font-family:var(--ff-mn); font-size:16px; font-weight:500; color:var(--ink); letter-spacing:.05em; line-height:1.5; }
-.pros-role{ margin-top:7px; font-size:11.5px; letter-spacing:.06em; color:var(--navy); line-height:1.8; }
-.pros-note{ margin-top:26px; font-size:11.5px; line-height:1.9; color:var(--text-mute); }
-@media (min-width:768px){
-  .pros{ grid-template-columns:repeat(2,180px); gap:36px; }
-  .pros-name{ font-size:17px; }
-}
-
 /* ================= 05 trial ================= */
 .trial-grid{ margin-top:38px; display:grid; gap:0; border-top:1px solid rgba(255,255,255,.18); }
 .trial-grid dt{
@@ -503,7 +484,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ul>
         <li><a href="#issue">お悩み</a></li>
         <li><a href="#concept">考え方</a></li>
-        <li><a href="#movie">動画</a></li>
         <li><a href="#proof">実績</a></li>
         <li><a href="#trainer">トレーナー</a></li>
         <li><a href="#faq">よくある質問</a></li>
@@ -520,8 +500,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero" id="hero">
   <div class="hero-media">
     <img class="hero-photo" src="images/hero.jpg"
-         alt="トレーナーの指導を受けながら、胸を開く動きを行っている女性"
-         width="1600" height="900" fetchpriority="high" decoding="async">
+         alt="女性トレーナーの指導を受けながらトレーニングをする40代・50代の女性"
+         width="1460" height="821" fetchpriority="high" decoding="async">
   </div>
 
   <div class="hero-body">
@@ -674,39 +654,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ============ 03 動画 ============ -->
-<section class="sec bg-off" id="movie">
-  <div class="wrap-slim">
-    <div class="rv">
-      <p class="eyebrow">Movie <span class="jp">トレーニングの様子</span></p>
-      <h2 class="sec-title">
-        <span class="nw">どんなことをするのか、</span><br>
-        <span class="accent"><span class="nw">ご覧ください。</span></span>
-      </h2>
-      <div class="rule"></div>
-    </div>
-
-    <div class="movie rv rv-d1">
-      <video controls playsinline preload="none" poster="images/mv-poster.jpg"
-             width="1280" height="720" aria-label="NeeDSのトレーニングの様子">
-        <source src="videos/training.mp4" type='video/mp4; codecs="avc1.4D401F"'>
-        <source src="videos/training.webm" type='video/webm; codecs="vp9"'>
-        お使いのブラウザは動画の再生に対応していません。
-      </video>
-      <p class="movie-note">※ 現在は写真をつないだ仮の動画です。撮影済みの動画に差し替えます。<br>
-        再生ボタンを押すまで動画は読み込まれないため、ページの表示は重くなりません。</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 04 実績 ============ -->
+<!-- ============ 03 実績 ============ -->
 <section class="sec bg-off" id="proof">
   <div class="wrap">
     <div class="rv">
       <p class="eyebrow">Record <span class="jp">選ばれている理由</span></p>
       <h2 class="sec-title">
-        <span class="nw">プロアスリートやドクターにも</span><br>
-        <span class="accent"><span class="nw">選ばれている方法を、</span><span class="nw">あなたに。</span></span>
+        <span class="nw">プロの体を見てきた場所で、</span><br>
+        <span class="accent"><span class="nw">あなたの体も。</span></span>
       </h2>
       <div class="rule"></div>
       <p class="lead">
@@ -728,37 +683,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ============ 05 ご利用いただいているプロフェッショナル ============ -->
-<section class="sec" id="pros">
-  <div class="wrap">
-    <div class="rv">
-      <p class="eyebrow">Professionals <span class="jp">ご利用いただいている方</span></p>
-      <h2 class="sec-title">
-        <span class="nw">プロの体を見てきた場所で、</span><br>
-        <span class="accent"><span class="nw">あなたの体も。</span></span>
-      </h2>
-      <div class="rule"></div>
-    </div>
-
-    <ul class="pros rv rv-d1">
-      <li>
-        <img class="photo r-square" src="images/a01.jpg" alt="プロゴルファー 河合庄司様"
-             width="400" height="400" loading="lazy" decoding="async">
-        <p class="pros-name">河合 庄司 様<span class="tag-tmp">仮</span></p>
-        <p class="pros-role">プロゴルファー</p>
-      </li>
-      <li>
-        <img class="photo r-square" src="images/a02.jpg" alt="元プロ野球選手 上園様"
-             width="400" height="400" loading="lazy" decoding="async">
-        <p class="pros-name">上園 様<span class="tag-tmp">仮</span></p>
-        <p class="pros-role"><span class="nw">元プロ野球選手</span><span class="nw">（阪神タイガース）</span></p>
-      </li>
-    </ul>
-    <p class="pros-note rv">※ お写真は仮置きです。掲載のご許可をいただいたうえで、最終版に差し替えます。</p>
-  </div>
-</section>
-
-<!-- ============ 06 トレーナー ============ -->
+<!-- ============ 04 トレーナー ============ -->
 <section class="sec" id="trainer">
   <div class="wrap">
     <div class="rv">
@@ -805,7 +730,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ============ 07 無料体験 ============ -->
+<!-- ============ 05 無料体験 ============ -->
 <section class="sec bg-navy" id="trial">
   <div class="wrap-slim">
     <div class="rv">
@@ -845,7 +770,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ============ 08 FAQ ============ -->
+<!-- ============ 06 FAQ ============ -->
 <section class="sec" id="faq">
   <div class="wrap-slim">
     <div class="rv">
@@ -913,7 +838,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ============ 09 店舗情報 ============ -->
+<!-- ============ 07 店舗情報 ============ -->
 <section class="sec bg-off" id="access">
   <div class="wrap">
     <div class="rv">
