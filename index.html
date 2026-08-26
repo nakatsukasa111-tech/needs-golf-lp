@@ -176,6 +176,13 @@ table{ border-collapse:collapse; }
 .r-portrait{ aspect-ratio:3/4; object-position:48% center; }
 .r-square{ aspect-ratio:1/1; }
 .r-wide{ aspect-ratio:16/10; }
+.img-wrap{ position:relative; }
+.img-badge{
+  position:absolute; left:0; bottom:0;
+  background:rgba(29,34,38,.74); color:#fff;
+  font-size:10px; letter-spacing:.14em; line-height:1;
+  padding:6px 11px;
+}
 
 /* ---------- reveal ---------- */
 .rv{ opacity:0; transform:translateY(22px); transition:opacity .9s cubic-bezier(.22,.61,.36,1), transform .9s cubic-bezier(.22,.61,.36,1); }
@@ -758,33 +765,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="voices">
       <article class="rv">
-        <img class="photo r-square voice-ph" src="images/p05.jpg"
-             alt="50代男性会員がトレーニングをしている様子"
-             width="800" height="800" loading="lazy" decoding="async">
+        <div class="img-wrap voice-ph">
+          <img class="photo r-square" src="images/p05.jpg"
+               alt="50代男性会員がトレーニングをしている様子（イメージ）"
+               width="800" height="800" loading="lazy" decoding="async">
+          <span class="img-badge">イメージ</span>
+        </div>
         <p class="voice-quote">「ドライバーが、力まなくても飛ぶようになりました」</p>
         <p class="voice-txt">半年で平均スコアが8打縮まりました。何より、18ホール歩いても後半でバテなくなったのが大きいです。</p>
         <p class="voice-name"><b>K.S. 様</b>／52歳・会社役員<br>ゴルフ歴18年・通われて8ヶ月</p>
       </article>
 
       <article class="rv rv-d1">
-        <img class="photo r-square voice-ph" src="images/p06.jpg"
-             alt="60代男性会員がトレーニングをしている様子"
-             width="800" height="800" loading="lazy" decoding="async">
+        <div class="img-wrap voice-ph">
+          <img class="photo r-square" src="images/p06.jpg"
+               alt="60代男性会員がトレーニングをしている様子（イメージ）"
+               width="800" height="800" loading="lazy" decoding="async">
+          <span class="img-badge">イメージ</span>
+        </div>
         <p class="voice-quote">「ラウンド翌日の腰痛が、なくなりました」</p>
         <p class="voice-txt">股関節が動くようになってから、腰で無理に捻らなくなったそうです。理由を説明してもらえるので納得して続けられます。</p>
         <p class="voice-name"><b>T.M. 様</b>／61歳・自営業<br>ゴルフ歴30年・通われて1年2ヶ月</p>
       </article>
 
       <article class="rv rv-d2">
-        <img class="photo r-square voice-ph" src="images/p07.jpg"
-             alt="40代男性会員がトレーニングをしている様子"
-             width="800" height="800" loading="lazy" decoding="async">
+        <div class="img-wrap voice-ph">
+          <img class="photo r-square" src="images/p07.jpg"
+               alt="40代男性会員がトレーニングをしている様子（イメージ）"
+               width="800" height="800" loading="lazy" decoding="async">
+          <span class="img-badge">イメージ</span>
+        </div>
         <p class="voice-quote">「レッスンで言われていた意味が、やっと分かった」</p>
         <p class="voice-txt">「捻転差」を作れと言われ続けてきましたが、そもそも捻れる体ではなかったと。初回の評価でそれが分かった時点で来た甲斐がありました。</p>
         <p class="voice-name"><b>Y.H. 様</b>／46歳・会社員<br>ゴルフ歴9年・通われて5ヶ月</p>
       </article>
     </div>
-    <p class="voice-disc rv">※ 掲載内容は個人の感想であり、成果を保証するものではありません。</p>
+    <p class="voice-disc rv">※ 写真・コメントはイメージです。実際にお通いの方のお声は、掲載のご許可をいただき次第、順次差し替えてまいります。</p>
   </div>
 </section>
 
