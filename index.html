@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P95C26ZR');</script>
+<!-- End Google Tag Manager -->
 <title>ゴルフトレーニング｜神戸・六甲道のプライベートジムNeeDS｜飛距離とスコアは「動き」で変わる</title>
 <meta name="description" content="胸椎・股関節・肩甲骨の動きからスイングを作り替える、40〜60代ゴルファーのためのパーソナルトレーニング。プロ野球・MLB傘下球団の指導実績を持つトレーナーが担当します。神戸・六甲道／JR六甲道駅から徒歩5分。初回無料体験受付中。">
 <meta name="robots" content="noindex,nofollow">
@@ -218,8 +226,12 @@ table{ border-collapse:collapse; }
 
 /* ================= hero ================= */
 .hero{ padding-top:var(--header-h); background:var(--paper); position:relative; }
-.hero-media{ position:relative; }
+.hero-media{ position:relative; background:#dcdad5; }
 .hero-media .ph{ border-left:0; border-right:0; }
+.hero-photo{
+  width:100%; display:block;
+  aspect-ratio:1/1; object-fit:cover; object-position:82% center;
+}
 .hero-body{ padding:0 var(--pad); }
 .hero-card{
   background:var(--paper); margin-top:-42px; position:relative; z-index:2;
@@ -249,6 +261,7 @@ table{ border-collapse:collapse; }
 .hero-meta b{ display:block; font-family:var(--ff-mn); font-size:16px; color:var(--ink); font-weight:500; letter-spacing:.02em; margin-bottom:2px; }
 .hero-cta{ padding:0 0 66px; }
 @media (min-width:768px){
+  .hero-photo{ aspect-ratio:16/9; max-height:82vh; object-position:center; }
   .hero-title{ font-size:36px; }
   .hero-card{ margin-top:-96px; padding:44px 46px 10px; margin-left:0; max-width:720px; }
   .hero-body{ max-width:var(--wrap); margin:0 auto; }
@@ -447,6 +460,10 @@ table{ border-collapse:collapse; }
 </head>
 
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P95C26ZR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <a class="skip" href="#main">本文へスキップ</a>
 
 <!-- ============ HEADER ============ -->
@@ -464,7 +481,7 @@ table{ border-collapse:collapse; }
         <li><a href="#access">店舗</a></li>
       </ul>
     </nav>
-    <a class="btn btn-mini header-cta" href="#line-cta">無料体験を予約</a>
+    <a class="btn btn-mini header-cta" href="#line-cta" data-event="cta_click" data-cta="header">無料体験を予約</a>
   </div>
 </header>
 
@@ -473,13 +490,11 @@ table{ border-collapse:collapse; }
 <!-- ============ HERO ============ -->
 <section class="hero" id="hero">
   <div class="hero-media">
-    <div class="ph ph-ratio-hero">
-      <div class="ph-inner">
-        <span class="ph-cam" aria-hidden="true">📷</span>
-        <p class="ph-txt">写真：フィニッシュまで振り切った50代男性ゴルファーのスイング（逆光ぎみ・ワイド構図／人物は右寄せ、左側に余白を残す）</p>
-        <span class="ph-tag">[PHOTO: 50代男性がティーショットを振り抜く様子 / 16:9]</span>
-      </div>
-    </div>
+    <!-- 写真は images/hero.jpg。.jpg が無ければ .png を自動で読みにいきます -->
+    <img class="hero-photo" src="images/hero.jpg"
+         onerror="if(!this.dataset.retried){this.dataset.retried=1;this.src='images/hero.png';}"
+         alt="ゴルフコースでティーショットを振り抜く男性ゴルファー"
+         width="1672" height="941" fetchpriority="high" decoding="async">
   </div>
 
   <div class="hero-body">
@@ -501,7 +516,7 @@ table{ border-collapse:collapse; }
         <li><b>徒歩5分</b>JR六甲道駅</li>
       </ul>
       <div class="cta-block hero-cta">
-        <a class="btn btn-line" href="#line-cta">LINEで無料体験に申し込む<span class="arw" aria-hidden="true">→</span></a>
+        <a class="btn btn-line" href="#line-cta" data-event="cta_click" data-cta="hero">LINEで無料体験に申し込む<span class="arw" aria-hidden="true">→</span></a>
         <p class="cta-note">
           <strong>公式LINEのご登録から、30秒でご予約いただけます。</strong><br>
           ゴルフ歴・運動経験は問いません。まずは今の体の状態を知るところから、お気軽にどうぞ。
@@ -711,7 +726,7 @@ table{ border-collapse:collapse; }
     </div>
 
     <div class="cta-block rv">
-      <a class="btn btn-line" href="#line-cta">まずは今の可動域を測ってみる（無料）<span class="arw" aria-hidden="true">→</span></a>
+      <a class="btn btn-line" href="#line-cta" data-event="cta_click" data-cta="method">まずは今の可動域を測ってみる（無料）<span class="arw" aria-hidden="true">→</span></a>
       <p class="cta-note">
         <strong>初回の体験は無料です。</strong>その場で動作評価まで受けていただけます。<br>
         当日は手ぶらでお越しいただけます（ウェア・シューズ・タオルは無料でお貸し出し）。
@@ -845,7 +860,7 @@ table{ border-collapse:collapse; }
       </p>
 
       <div class="cta-block">
-        <a class="btn btn-line" href="#line-cta">今すぐ無料体験を予約する<span class="arw" aria-hidden="true">→</span></a>
+        <a class="btn btn-line" href="#line-cta" data-event="cta_click" data-cta="trial">今すぐ無料体験を予約する<span class="arw" aria-hidden="true">→</span></a>
         <p class="cta-note">
           <strong>ご予約は公式LINEから承っています。</strong><br>
           ご相談・ご質問だけでも構いません。「今の体で通えるか知りたい」といったメッセージも歓迎です。
@@ -985,7 +1000,7 @@ table{ border-collapse:collapse; }
           神戸・六甲道で、ゴルファーの体づくりを専門にサポートしています。
         </p>
         <ul class="sns">
-          <li><a href="#line-cta" aria-label="LINE公式アカウント">LINE</a></li>
+          <li><a href="#line-cta" aria-label="LINE公式アカウント" data-event="cta_click" data-cta="footer_sns">LINE</a></li>
           <li><a href="#" aria-label="Instagram">Instagram</a></li>
           <li><a href="#" aria-label="Facebook">Facebook</a></li>
           <li><a href="#" aria-label="YouTube">YouTube</a></li>
@@ -994,7 +1009,7 @@ table{ border-collapse:collapse; }
 
       <div class="rv rv-d1">
         <p class="cta-note" style="margin-bottom:16px;margin-top:0;"><strong>初回無料体験、受付中です。</strong></p>
-        <a class="btn btn-line" href="#line-cta">LINEで無料体験に申し込む<span class="arw" aria-hidden="true">→</span></a>
+        <a class="btn btn-line" href="#line-cta" data-event="cta_click" data-cta="footer">LINEで無料体験に申し込む<span class="arw" aria-hidden="true">→</span></a>
         <p class="cta-note">ご質問だけでもお気軽にどうぞ。担当トレーナーが直接お返事いたします。</p>
       </div>
     </div>
@@ -1012,7 +1027,7 @@ table{ border-collapse:collapse; }
 <!-- ============ STICKY CTA (mobile) ============ -->
 <div class="sticky-cta" id="stickyCta">
   <p class="mini-note">初回無料体験・完全予約制／JR六甲道駅 徒歩5分</p>
-  <a class="btn btn-line" href="#line-cta">LINEで無料体験に申し込む<span class="arw" aria-hidden="true">→</span></a>
+  <a class="btn btn-line" href="#line-cta" data-event="cta_click" data-cta="sticky">LINEで無料体験に申し込む<span class="arw" aria-hidden="true">→</span></a>
 </div>
 
 <script>
@@ -1060,6 +1075,18 @@ table{ border-collapse:collapse; }
       btn.setAttribute('aria-expanded', String(!open));
       var panel = document.getElementById(btn.getAttribute('aria-controls'));
       if (panel) { if (open) { panel.setAttribute('hidden',''); } else { panel.removeAttribute('hidden'); } }
+    });
+  });
+
+  /* ---- CTA click tracking (dataLayer) ---- */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-event="cta_click"]'), function(el){
+    el.addEventListener('click', function(){
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'cta_click',
+        cta_position: el.getAttribute('data-cta') || '',
+        cta_label: (el.textContent || '').replace(/\s+/g, ' ').replace(/[→\s]+$/, '').trim()
+      });
     });
   });
 

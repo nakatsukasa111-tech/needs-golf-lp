@@ -4,9 +4,10 @@
 
 ## ファイル
 
-| ファイル | 内容 |
+| パス | 内容 |
 |---|---|
-| `golf-lp.html` | LP本体。CSS・JSを内包した単体HTML。外部ファイルへの依存はGoogle Fontsのみ |
+| `index.html` | LP本体。CSS・JSを内包した単体HTML。外部依存はGoogle FontsとGTMのみ |
+| `images/hero.jpg` | ファーストビューの写真 |
 
 ## コンセプト
 
@@ -14,10 +15,17 @@
 胸椎の回旋・股関節・肩甲骨の動きを作り直すことで、フォーム矯正ではなく「動きからスイングを作る」アプローチを訴求する。
 
 - ターゲット：40〜60代の男性ゴルファー
-- CTA：公式LINE登録 → 無料体験予約（ページ内4箇所＋モバイル固定バー）
+- 集客：広告出稿が中心
+- CTA：公式LINE登録 → 無料体験予約（ページ内6箇所＋モバイル固定バー）
 - ブランドカラー：`#0d669b`
+- 計測：Google Tag Manager `GTM-P95C26ZR`。CTAクリック時に `cta_click` イベントを送信（`cta_position` で設置場所を識別）
 
-## 公開前の差し替え項目
+## 公開先
+
+- 確認用：GitHub Pages
+- 本番（予定）：ロリポップ上の `golf.nds-training.jp`
+
+## 公開前の残作業
 
 - [ ] ロゴ画像（ヘッダー＝白背景用／フッター＝紺背景用の2種）
 - [ ] 写真（`[PHOTO: ...]` ラベル付きのプレースホルダー箇所すべて）
@@ -26,7 +34,3 @@
 - [ ] SNSリンク（Instagram / Facebook / YouTube）
 - [ ] `<meta name="robots" content="noindex,nofollow">` の削除
 - [ ] 無料体験セクションの通常価格（見せ消し表示を使う場合）
-
-## プレビュー
-
-https://htmlpreview.github.io/?https://raw.githubusercontent.com/nakatsukasa111-tech/needs-golf-lp/main/golf-lp.html
