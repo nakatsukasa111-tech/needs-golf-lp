@@ -226,29 +226,29 @@ table{ border-collapse:collapse; }
 .hero-media{ position:relative; background:#e3ded6; }
 .hero-photo{
   width:100%; display:block;
-  aspect-ratio:1/1; object-fit:cover; object-position:42% center;
+  aspect-ratio:16/10; object-fit:cover; object-position:42% 28%;
 }
 .hero-body{ padding:0 var(--pad); }
 .hero-card{
-  background:var(--paper); margin-top:-42px; position:relative; z-index:2;
-  padding:34px 26px 8px; max-width:640px;
+  background:var(--paper); margin-top:-52px; position:relative; z-index:2;
+  padding:16px 22px 8px; max-width:640px;
 }
 .hero-eyebrow{
   font-size:11px; letter-spacing:.22em; color:var(--navy); font-weight:500; line-height:1.6;
 }
 .hero-title{
   font-family:var(--ff-mn); font-weight:500;
-  font-size:30px; line-height:1.5; letter-spacing:.02em; color:var(--ink);
-  margin-top:18px;
+  font-size:26px; line-height:1.45; letter-spacing:.02em; color:var(--ink);
+  margin-top:10px;
 }
 .hero-title em{ font-style:normal; color:var(--navy); }
-.hero-sub{ margin-top:22px; font-size:14px; line-height:2.0; color:var(--text); border-left:2px solid var(--beige); padding-left:16px; }
+.hero-sub{ margin-top:14px; font-size:13px; line-height:1.8; color:var(--text); border-left:2px solid var(--beige); padding-left:14px; }
 .hero-meta{
-  margin-top:26px; display:flex; flex-wrap:wrap; gap:0;
+  margin-top:16px; display:flex; flex-wrap:wrap; gap:0;
   border-top:1px solid var(--line-soft);
 }
 .hero-meta li{
-  flex:1 1 33.33%; padding:13px 3px; text-align:center;
+  flex:1 1 33.33%; padding:9px 3px; text-align:center;
   border-bottom:1px solid var(--line-soft);
   font-size:10.5px; letter-spacing:.02em; color:var(--text-mute); line-height:1.6;
 }
@@ -256,21 +256,22 @@ table{ border-collapse:collapse; }
 .hero-meta b{ display:block; font-family:var(--ff-mn); font-size:16px; color:var(--ink); font-weight:500; letter-spacing:.02em; margin-bottom:2px; }
 @media (max-width:409px){ .hero-meta li{ font-size:10px; letter-spacing:0; } }
 .hero-bridge{
-  margin-top:30px; padding-top:26px; border-top:1px solid var(--line);
-  font-family:var(--ff-mn); font-weight:500; font-size:19px; line-height:1.7;
-  letter-spacing:.04em; color:var(--ink);
+  margin-top:12px; padding-top:12px; border-top:1px solid var(--line);
+  font-family:var(--ff-mn); font-weight:500; font-size:15.5px; line-height:1.6;
+  letter-spacing:.02em; color:var(--ink);
 }
 .hero-bridge em{ font-style:normal; color:var(--navy); }
-.hero-cta{ padding:0 0 66px; margin-top:26px; }
+.hero-cta{ padding:0 0 60px; margin-top:20px; }
 @media (min-width:768px){ .hero-bridge{ font-size:24px; } }
 @media (min-width:1024px){ .hero-bridge{ font-size:27px; } }
 @media (min-width:768px){
-  .hero-photo{ aspect-ratio:16/9; max-height:82vh; object-position:center; }
-  .hero-title{ font-size:44px; }
-  .hero-card{ margin-top:-96px; padding:44px 46px 10px; margin-left:0; max-width:720px; }
+  .hero-photo{ aspect-ratio:16/9; max-height:72vh; object-position:center; }
+  .hero-title{ font-size:42px; margin-top:18px; }
+  .hero-card{ margin-top:-96px; padding:40px 46px 10px; margin-left:0; max-width:720px; }
   .hero-body{ max-width:var(--wrap); margin:0 auto; }
-  .hero-sub{ font-size:15px; }
-  .hero-meta li{ font-size:11.5px; padding:15px 6px; }
+  .hero-sub{ margin-top:22px; font-size:15px; line-height:2.0; padding-left:16px; }
+  .hero-meta{ margin-top:24px; }
+  .hero-meta li{ font-size:11.5px; padding:14px 6px; }
 }
 @media (min-width:1024px){
   .hero-title{ font-size:52px; }
@@ -441,6 +442,7 @@ table{ border-collapse:collapse; }
 /* ================= 無料体験の特典 ================= */
 .perks{ margin-top:38px; display:grid; gap:0; border-top:1px solid rgba(255,255,255,.2); }
 .perk{ padding:24px 0; border-bottom:1px solid rgba(255,255,255,.14); }
+.perk-ph{ margin-bottom:20px; }
 .perk-no{
   font-family:var(--ff-en); font-size:12px; letter-spacing:.28em; font-weight:600;
   color:var(--gold-soft); text-transform:uppercase;
@@ -448,7 +450,7 @@ table{ border-collapse:collapse; }
 .perk-no em{ font-style:normal; font-size:17px; letter-spacing:.06em; margin-left:6px; }
 .perk-ttl{ margin-top:10px; font-family:var(--ff-mn); font-size:19px; font-weight:500; color:#fff; letter-spacing:.05em; line-height:1.55; }
 .perk-txt{ margin-top:10px; font-size:13px; line-height:2.0; color:rgba(255,255,255,.78); }
-@media (min-width:768px){
+@media (min-width:900px){
   .perks{ grid-template-columns:repeat(3,1fr); border-bottom:1px solid rgba(255,255,255,.14); }
   .perk{ padding:28px 26px; border-bottom:0; border-left:1px solid rgba(255,255,255,.14); }
   .perk:first-child{ border-left:0; padding-left:0; }
@@ -622,8 +624,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <em>美しい。</em>
       </h1>
       <p class="hero-sub">
-        肩甲骨、股関節、体幹、インナーマッスル、バランス。<br>
-        体の使い方から整えて、これからの自分をつくる。
+        <span class="nw">肩甲骨、股関節、体幹、</span><span class="nw">インナーマッスル、バランス。</span><br>
+        <span class="nw">体の使い方から整えて、</span><span class="nw">これからの自分をつくる。</span>
       </p>
       <ul class="hero-meta">
         <li><b>初回無料</b>体験トレーニング</li>
@@ -694,7 +696,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <ul class="worry">
         <li><span class="nw">何をすればいいか分からない。</span><span class="nw">自分に合っているのかも分からない</span></li>
-        <li><span class="nw">痛みや不調があると、</span><span class="nw">動いた方がいいのは分かっていても動けない</span></li>
+        <li><span class="nw">痛みや不調があると、</span><span class="nw">動いた方がいいのは</span><span class="nw">分かっていても動けない</span></li>
         <li><span class="nw">仕事もプライベートも忙しくて、</span><span class="nw">自分のことは、いつも後回しになる</span></li>
       </ul>
 
@@ -702,7 +704,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="nw">だから、</span><em><span class="nw">プロと一緒に</span><span class="nw">やってみませんか。</span></em>
       </p>
       <p class="bridge-sub">
-        NeeDSには<b>理学療法士・アスレティックトレーナー</b>が在籍し、ドクターやアスリートの方も通われています。
+        NeeDSには<b><span class="nw">理学療法士・</span><span class="nw">アスレティックトレーナー</span></b><span class="nw">が在籍し、</span><span class="nw">ドクターやアスリートの方も</span><span class="nw">通われています。</span>
       </p>
 
       <ul class="cats">
@@ -716,7 +718,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ul class="reasons">
         <li><span class="nw">身体のプロが</span><span class="nw">マンツーマンで対応</span></li>
         <li><span class="nw">身体の状態を</span><span class="nw">正しく評価</span></li>
-        <li><span class="nw">あなただけの</span><span class="nw">オーダーメイドメニュー</span></li>
+        <li><span class="nw">あなただけの</span><span class="nw">オーダーメイド</span><span class="nw">メニュー</span></li>
         <li><span class="nw">無理なく続けられる</span><span class="nw">サポート体制</span></li>
       </ul>
 
@@ -757,23 +759,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <dl class="axis">
         <div class="row">
           <dt>肩甲骨<small>Scapula</small></dt>
-          <dd>動かすほどに血のめぐりが良くなり、肩まわりが軽くなります。胸が開いて、姿勢も自然と伸びていきます。</dd>
+          <dd><span class="nw">動かすほどに血のめぐりが良くなり、</span><span class="nw">肩まわりが軽くなります。</span><span class="nw">胸が開いて、</span><span class="nw">姿勢も自然と伸びていきます。</span></dd>
         </div>
         <div class="row">
           <dt>股関節<small>Hip</small></dt>
-          <dd>体の中でいちばん大きな関節で、立つ・歩く・座るの土台です。動くようになると腰への負担が減り、歩幅が出て、下半身のめぐりも良くなります。</dd>
+          <dd><span class="nw">体の中でいちばん大きな関節で、</span><span class="nw">立つ・歩く・座るの土台です。</span><span class="nw">動くようになると腰への負担が減り、</span><span class="nw">歩幅が出て、</span><span class="nw">下半身のめぐりも良くなります。</span></dd>
         </div>
         <div class="row">
           <dt>体幹<small>Core</small></dt>
-          <dd>姿勢を支える中心です。ここが働くと立ち姿が変わり、同じ動作でも疲れにくい体になっていきます。</dd>
+          <dd><span class="nw">姿勢を支える中心です。</span><span class="nw">ここが働くと立ち姿が変わり、</span><span class="nw">同じ動作でも</span><span class="nw">疲れにくい体になっていきます。</span></dd>
         </div>
         <div class="row">
           <dt>インナーマッスル<small>Inner Muscle</small></dt>
-          <dd>体を内側から支える深い筋肉です。使えるようになるほど、基礎代謝の土台も整っていきます。</dd>
+          <dd><span class="nw">体を内側から支える深い筋肉です。</span><span class="nw">使えるようになるほど、</span><span class="nw">基礎代謝の土台も整っていきます。</span></dd>
         </div>
         <div class="row">
           <dt>バランス<small>Balance</small></dt>
-          <dd>左右差や重心のクセを整えます。体の使い方が偏らなくなり、動きにも見た目にも安定感が出ます。</dd>
+          <dd><span class="nw">左右差や重心のクセを整えます。</span><span class="nw">体の使い方が偏らなくなり、</span><span class="nw">動きにも見た目にも</span><span class="nw">安定感が出ます。</span></dd>
         </div>
       </dl>
     </div>
@@ -909,16 +911,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="perks">
         <article class="perk">
+          <img class="photo r-tall perk-ph" src="images/g01.jpg" alt="身体の状態をチェックしている様子（写真は差し替え予定）"
+               width="800" height="1000" loading="lazy" decoding="async">
           <p class="perk-no">Gift<em>01</em></p>
           <h3 class="perk-ttl"><span class="nw">身体の状態を</span><span class="nw">チェック</span></h3>
           <p class="perk-txt">姿勢・動き・身体の使い方を、専門家が丁寧にチェックします。</p>
         </article>
         <article class="perk">
+          <img class="photo r-tall perk-ph" src="images/g02.jpg" alt="トレーニングを体験している様子（写真は差し替え予定）"
+               width="800" height="1000" loading="lazy" decoding="async">
           <p class="perk-no">Gift<em>02</em></p>
           <h3 class="perk-ttl"><span class="nw">あなたに合った</span><span class="nw">トレーニングを体験</span></h3>
           <p class="perk-txt">その状態に合わせたトレーニングを、実際に体験できます。</p>
         </article>
         <article class="perk">
+          <img class="photo r-tall perk-ph" src="images/g03.jpg" alt="専用プランをお渡ししている様子（写真は差し替え予定）"
+               width="800" height="1000" loading="lazy" decoding="async">
           <p class="perk-no">Gift<em>03</em></p>
           <h3 class="perk-ttl"><span class="nw">あなた専用プランを</span><span class="nw">お渡し</span></h3>
           <p class="perk-txt">なりたい身体をうかがい、これからの進め方を紙にしてお渡しします。</p>
@@ -978,7 +986,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="rv rv-d1">
         <h3 class="env-ttl"><span class="nw">通いやすい環境が</span><span class="nw">整っています。</span></h3>
         <ul class="env">
-          <li>お客様専用駐車場5台完備</li>
+          <li>お客様専用駐車場あり</li>
           <li>ウェアレンタルOK</li>
           <li>タオル無料・お水飲み放題</li>
           <li>完全個室・完全予約制</li>
